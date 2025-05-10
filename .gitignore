@@ -1,3 +1,18 @@
+
+# midi files
+songs/
+midigpt_workspace/
+
+soundfonts/*
+!soundfonts/SalterDroid-SonivoxBAE.sf2
+
+audio/Metronomes/*
+!audio/Metronomes/Perc_MetronomeQuartz_lo.wav
+!audio/Metronomes/Perc_MetronomeQuartz_hi.wav
+
+midi/*
+!midi/output.mid
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
