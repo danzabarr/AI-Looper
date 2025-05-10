@@ -351,10 +351,27 @@ class Looper:
                 
                 track_id += 1
 
+        parami={
+          'tracks_per_step': 1, 
+          'bars_per_step': 1, 
+          'model_dim': 4, 
+          'percentage': 100, 
+          'batch_size': 1, 
+          'temperature': 1.0, 
+          'max_steps': 200, 
+          'polyphony_hard_limit': 6, 
+          'shuffle': True, 
+          'verbose': False, 
+          'ckpt': "midigpt_workspace/MIDI-GPT/models/EXPRESSIVE_ENCODER_RES_1920_12_GIGAMIDI_CKPT_150K.pt",
+          'sampling_seed': -1,
+          'mask_top_k': 0
+        }
+
         piece = json.dumps(midi_json_input)
         status = json.dumps(valid_status)
-        
-        return piece, status
+        param = json.dumps(parami)
+
+        return piece, status, param
        
     def delete(self, track_number):
         if len(self.tracks) <= track_number:

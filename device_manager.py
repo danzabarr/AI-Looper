@@ -103,8 +103,5 @@ class MIDIDeviceMonitor:
                     self.disconnect_device()
                     self.window.notifyDeviceRemoved(self.connected_device)
                 
-            # create a modal dialog to ask the user if they want to switch to the new device
-            # if they do, call the connect_to_device method
-            
             time.sleep(1)
     

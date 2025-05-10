@@ -348,12 +348,10 @@ class MainWindow(QWidget, MIDIListener):
         if self.gen_process is not None and self.gen_process.is_alive():
             return
 
-        self.piece, self.status = self.looper.start_generation()
-
         print("Starting generation")
 
         self.queue = Queue()
-        self.gen_process = Process(target=generate_task, args=(self.queue, self.piece, self.status))
+        self.gen_process = Process(target=generate_task, args=(self.queue, self.looper))
         self.gen_process.start()
         
         self.timer = self.startTimer(50)  # Check every 0.5s
